@@ -53,7 +53,6 @@ bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
-bindsym $mod+Shift+g exec "xdoltool type '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'"
 bindsym $mod+Shift+m exec i3-msg '[con_mark="^"] mark ""'
 for_window [class="Alacritty"] border pixel 2
 
