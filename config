@@ -54,7 +54,6 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+q kill
 bindsym $mod+Shift+m exec i3-msg '[con_mark="^"] mark ""'
-for_window [class="Alacritty"] border pixel 2
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -178,14 +177,15 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-exec xrandr --output DVI-D-2 --left-of HDMI-1 --output DP-1 --right-of HDMI-1 --rotate right --rate 70 --output HDMI-1 --rate 144
-for_window [class=".*"] border pixel 0
 exec picom
-exec discord
 gaps inner 10
 gaps outer 5
+exec polybar
+#client.focused            #35344c #35344c #35344c #35344c
+#client.focused_inactive   #35344c #35344c #35344c #35344c
+#client.unfocused          #35344c #35344c #35344c #35344c
+#default_border           pixel 2
 
-exec /usr/bin/pipewire 
-exec /usr/bin/pipewire-pulse
-exec /usr/bin/pipewire-media-session
+for_window [class="^.*"] border pixel 0
+for_window [floating] border pixel 0
+
