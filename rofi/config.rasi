@@ -1,0 +1,120 @@
+configuration {
+  modes: "window,drun,run,ssh";
+  font: "JetBrainsMono NF 18";
+  drun-display-format: "{name}";
+}
+
+* {
+  // general
+  bg: #FFFFFF;
+  bgt: #28282895;
+  t: transparent;
+  fg: #101010;
+
+  selected-bg: @fg;
+  selected-fg: @bg;
+
+  // for windows
+  active: #FFFFFF;
+  urgent: #FFFFFF;
+}
+
+window {
+  fullscreen: true;
+  padding: 35% 30%;       // you might want to ajust these to resize rofi.
+  transparency: "real";
+  background-color: @bgt;
+  border-color: @t;
+}
+
+listview {
+  border: 0 0 0 0;
+  padding: 23 0 0;
+  scrollbar: true;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @fg;
+    handle-width: 8px;
+    padding:      0 5;
+}
+
+entry {
+    placeholder: "";
+}
+
+// less interesting stuff {{{
+
+// using elements from:
+// https://github.com/bardisty/gruvbox-rofi/blob/master/gruvbox-common.rasi
+
+textbox {
+    text-color: @fg;
+}
+
+element {
+    border:  0;
+    padding: 2px;
+}
+element.normal.normal {
+    background-color: @t;
+    text-color:       #FFFFFF;
+}
+element.selected.normal {
+    background-color: @selected-bg;
+    text-color:       #FFFFFF;
+}
+element.selected.urgent {
+    background-color: @selected-bg;
+    text-color:       #FFFFFF;
+}
+element.selected.active {
+    background-color: @selected-bg;
+    text-color:       #FFFFFF;
+}
+element.alternate.normal {
+    background-color: @t;
+    text-color:       #FFFFFF;
+}
+element.alternate.urgent {
+    background-color: @t;
+    text-color:       #FFFFFF;
+}
+element.alternate.active {
+    background-color: @t;
+    text-color:       #FFFFFF;
+}
+
+sidebar {
+    border:       2px 0 0;
+    border-color: @fg;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: #FFFFFF;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: #FFFFFF;
+}
+
+button.selected {
+    background-color: @bg;
+    text-color:       #FFFFFF;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: #FFFFFF;
+    margin:     0 0.3em 0 0;
+}
